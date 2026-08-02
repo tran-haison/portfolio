@@ -1,0 +1,8 @@
+# Portfolio V1 Task List
+
+- [x] S1 RED: define failing tests for required fields, unique slugs, lookup, and next-project order. (`REQ-002`, `REQ-003`)
+- [x] S1 GREEN: implement the local project content module. (`AC-003`–`AC-006`)
+- [x] S2 implement brand tokens, typography, atmosphere, header, footer, and accessibility baseline. (`AC-001`, `AC-002`, `AC-007`, `AC-008`)
+- [x] S3 implement homepage sections from shared content. (`REQ-001`, `REQ-002`, `REQ-004`)
+- [x] S4 implement work archive, dynamic detail pages, and not-found path. (`REQ-002`, `REQ-003`)
+- [x] S5 run test, lint, build, and visual verification; record evidence.
