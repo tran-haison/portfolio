@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { ProjectCard } from "@/components/project-card";
@@ -66,20 +67,29 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="hero-orbit" aria-hidden="true">
-          <div className="orbit-grid" />
-          <div className="orbit-ring orbit-ring-outer" />
-          <div className="orbit-ring orbit-ring-inner" />
-          <div className="orbit-axis orbit-axis-x" />
-          <div className="orbit-axis orbit-axis-y" />
-          <div className="orbit-core">
-            <span>N/S</span>
-            <small>EST. 26</small>
+        <div className="hero-brain" aria-hidden="true">
+          <div className="brain-grid" />
+          <div className="brain-glow" />
+          <div className="brain-image-shell">
+            <Image
+              className="brain-image"
+              src="/images/hero-neural-brain.webp"
+              alt=""
+              width={1254}
+              height={1254}
+              sizes="(max-width: 980px) 85vw, 38vw"
+              priority
+            />
           </div>
-          <span className="orbit-satellite orbit-satellite-one" />
-          <span className="orbit-satellite orbit-satellite-two" />
-          <span className="orbit-coordinate orbit-coordinate-top">−37.8136°</span>
-          <span className="orbit-coordinate orbit-coordinate-bottom">144.9631°</span>
+          <div className="brain-orbit brain-orbit-one">
+            <span className="brain-node" />
+          </div>
+          <div className="brain-orbit brain-orbit-two" />
+          <div className="brain-scanline" />
+          <span className="brain-pulse brain-pulse-one" />
+          <span className="brain-pulse brain-pulse-two" />
+          <span className="brain-coordinate brain-coordinate-top">NEURAL OBJECT / 01</span>
+          <span className="brain-coordinate brain-coordinate-bottom">SIGNAL / ACTIVE</span>
         </div>
 
         <div className="hero-footnote">

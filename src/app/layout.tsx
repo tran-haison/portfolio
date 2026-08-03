@@ -43,8 +43,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body>
+    <html
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable}`}
+      data-scroll-behavior="smooth"
+    >
+      <body suppressHydrationWarning>
         <a className="skip-link" href="#main-content">Skip to content</a>
         <div className="page-atmosphere" aria-hidden="true" />
         <SiteHeader />
