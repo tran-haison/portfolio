@@ -8,6 +8,7 @@
  * @property {string} status
  * @property {string} url
  * @property {string} logo
+ * @property {"mobile-screens" | "application-flow" | "fallback"} showcase
  * @property {{src: string, alt: string}[]} screenshots
  * @property {boolean} featured
  * @property {string[]} services
@@ -32,22 +33,35 @@ export const projects = [
     status: "Coming soon",
     url: "https://keeps.nosiahstudios.com/",
     logo: "/images/projects/keeps-logo.png",
+    showcase: "mobile-screens",
     screenshots: [
       {
-        src: "/images/projects/keeps-1.png",
-        alt: "Keeps stamp camera framing an illustrated mushroom memory",
+        src: "/images/projects/keeps-app-store-1.png",
+        alt: "Keeps App Store preview of the stamp camera framing colorful umbrellas",
       },
       {
-        src: "/images/projects/keeps-2.png",
-        alt: "Keeps stamp camera framing a dog cutout",
+        src: "/images/projects/keeps-app-store-2.png",
+        alt: "Keeps App Store preview of the sticker camera framing a dog cutout",
       },
       {
-        src: "/images/projects/keeps-3.png",
-        alt: "Keeps calendar archive filled with stamp-framed memories",
+        src: "/images/projects/keeps-app-store-3.png",
+        alt: "Keeps App Store preview of the calendar archive filled with stamp-framed memories",
       },
       {
-        src: "/images/projects/keeps-4.png",
-        alt: "Keeps collection of playful stamp-framed photos",
+        src: "/images/projects/keeps-app-store-4.png",
+        alt: "Keeps App Store preview of a collection of playful stamp-framed photos",
+      },
+      {
+        src: "/images/projects/keeps-app-store-5.png",
+        alt: "Keeps App Store preview of the scrapbook editor arranging stamp-framed memories",
+      },
+      {
+        src: "/images/projects/keeps-app-store-6.png",
+        alt: "Keeps App Store preview of friends sharing a stamp-framed photo in a conversation",
+      },
+      {
+        src: "/images/projects/keeps-app-store-7.png",
+        alt: "Keeps App Store preview of home screen widgets and quick camera access",
       },
     ],
     featured: true,
@@ -74,6 +88,7 @@ export const projects = [
     status: "Live",
     url: "https://www.resumie.space/",
     logo: "/images/projects/resumie-logo.png",
+    showcase: "application-flow",
     screenshots: [],
     featured: true,
     services: ["Web development", "Full-stack development", "UI/UX design"],
@@ -99,7 +114,37 @@ export const projects = [
     status: "Live",
     url: "https://workouch.nosiahstudios.com/",
     logo: "/images/projects/workouch-logo.png",
-    screenshots: [],
+    showcase: "mobile-screens",
+    screenshots: [
+      {
+        src: "/images/projects/workouch-1.png",
+        alt: "Workouch App Store preview of the AI workout dashboard with quick and advanced planning modes",
+      },
+      {
+        src: "/images/projects/workouch-2.png",
+        alt: "Workouch App Store preview of the prompt-based AI workout generator",
+      },
+      {
+        src: "/images/projects/workouch-3.png",
+        alt: "Workouch App Store preview of personalized exercise settings for sets, repetitions, weight, and rest",
+      },
+      {
+        src: "/images/projects/workouch-4.png",
+        alt: "Workouch App Store preview of a completed workout summary with exercises, sets, duration, and calories",
+      },
+      {
+        src: "/images/projects/workouch-5.png",
+        alt: "Workouch App Store preview of the searchable exercise library",
+      },
+      {
+        src: "/images/projects/workouch-6.png",
+        alt: "Workouch App Store preview of structured workout options for duration, intensity, goals, and body areas",
+      },
+      {
+        src: "/images/projects/workouch-7.png",
+        alt: "Workouch App Store preview of personal health metrics including weight, BMI, and calories",
+      },
+    ],
     featured: true,
     services: ["Mobile app development", "Full-stack development", "UI/UX design"],
     technology: ["iOS and Android", "AI generation", "Cloud sync", "In-app subscriptions"],

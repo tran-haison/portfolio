@@ -10,4 +10,5 @@
 - [x] S6 GREEN: replace placeholder positioning and project records with verified public content. (`REQ-002`, `REQ-004`)
 - [x] S7 expose live-project CTAs and professional profile links, then run regression and responsive verification. (`AC-010`, `AC-011`)
 - [x] S8 fetch, optimize, and render official project logos in the shared project-card beacon. (`AC-012`)
-- [x] S9 render the four supplied Keeps screens as an optimized, responsive case-study hero gallery with fallback support. (`AC-013`)
+- [x] S9 render the seven supplied Keeps screens and seven supplied Workouch screens as optimized, responsive, infinitely looping case-study hero galleries with reduced-motion fallback support. (`AC-013`)
+- [x] S10 translate the supplied document hierarchy into a fictional Resumie job-to-resume-and-cover-letter showcase. (`AC-014`)

@@ -19,15 +19,16 @@
 | AC-010 | Homepage and shell present Nosiah Studios, worldwide availability, the four supplied services, email, LinkedIn, and GitHub without personal-name or first-person-singular positioning. | Pass |
 | AC-011 | Keeps, Resumie, and Workouch each render a unique case study and valid live-project CTA. | Pass |
 | AC-012 | Homepage and `/work` cards render optimized local Keeps, Resumie, and Workouch logos instead of initials. | Pass |
-| AC-013 | `/work/keeps` renders the four supplied mobile screens through `next/image`; Resumie and Workouch retain the decorative fallback. | Pass |
+| AC-013 | `/work/keeps` and `/work/workouch` each render all seven supplied App Store screenshots through `next/image` at their native ratio in seamless infinite carousels, without added per-image background, border, rounding, shadow, or cropping. | Pass |
+| AC-014 | `/work/resumie` presents a fictional Northstar Energy job brief and Software Engineer role beside an upright, taller resume and shorter matched cover letter; the workflow labels sit above two aligned, equal-height frames. | Pass |
 
 ## Automated evidence
 
-- `npm test`: 15/15 tests pass.
+- `npm test`: 16/16 tests pass.
 - `npm run lint`: pass with zero errors or warnings.
 - `npm run build`: pass on Next.js 16.2.12; `/`, `/work`, and all project detail routes are prerendered.
 - `git diff --check`: pass.
-- Browser inspection: the Keeps detail route exposes all four labeled screens and renders the full staggered gallery without affecting neighboring content.
+- Browser inspection: the Keeps and Workouch detail routes each expose all seven labeled screens in continuous loops without affecting neighboring content.
 
 ## Visual review
 
@@ -35,7 +36,9 @@
 - Mobile homepage: 375×812, the animated brain and all three real project cards load without horizontal overflow.
 - Mobile `/work`: all three project logos load at 375×812 with no horizontal overflow.
 - Desktop Resumie detail: project metadata, live URL, three narrative sections, and next-project navigation present.
-- Desktop Keeps detail: all four screenshots are visible inside the hero gallery with intentional stagger, depth, and no image cropping.
+- Desktop Keeps detail: all seven App Store screenshots remain upright at their native ratio and move through a seamless continuous loop with no added image treatment or cropping.
+- Desktop Workouch detail: all seven App Store screenshots use the same native-ratio carousel treatment, with clear spacing around the project and status labels.
+- Desktop Resumie detail: both workflow labels sit above aligned, equal-height frames; the upright resume and shorter cover letter retain their hierarchy and visible inset spacing.
 
 ## Hero animation follow-up
 
@@ -49,5 +52,5 @@
 Before public deployment, the portfolio owner should:
 
 1. Supply authoritative framework and infrastructure stacks for Keeps, Resumie, and Workouch if deeper technical detail is wanted.
-2. Add project screenshots or videos for Resumie and Workouch; Keeps now uses the four supplied mobile screens.
+2. Add project screenshots or videos for Workouch; Keeps and Resumie now use project-specific showcases.
 3. Add a profile portrait only if the personal side of the portfolio should be more prominent.

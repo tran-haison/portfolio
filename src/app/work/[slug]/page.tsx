@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import { ResumieProjectVisual } from "@/components/resumie-project-visual";
 import { getNextProject, getProjectBySlug, projects } from "@/data/projects.mjs";
 
 type ProjectPageProps = {
@@ -68,32 +69,39 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <span aria-hidden="true">↗</span>
           </a>
 
-          {project.screenshots.length > 0 ? (
+          {project.showcase === "application-flow" ? (
+            <ResumieProjectVisual status={project.status} />
+          ) : project.screenshots.length > 0 ? (
             <div className="project-hero-visual project-screen-gallery">
-              <div className="project-detail-grid" aria-hidden="true" />
-              <div className="screen-gallery-glow" aria-hidden="true" />
               <div
                 className="screen-gallery-phones"
                 role="group"
                 aria-label={`${project.title} mobile app screens`}
               >
-                {project.screenshots.map((screenshot, index) => (
-                  <figure
-                    className={`project-phone project-phone-${index + 1}`}
-                    key={screenshot.src}
-                  >
-                    <Image
-                      src={screenshot.src}
-                      alt={screenshot.alt}
-                      width={1012}
-                      height={2191}
-                      sizes="(max-width: 720px) 36vw, 19vw"
-                    />
-                  </figure>
-                ))}
+                <div className="screen-gallery-track">
+                  {[project.screenshots, project.screenshots].map((screenshots, setIndex) => (
+                    <div
+                      className="screen-gallery-set"
+                      aria-hidden={setIndex === 1}
+                      key={`gallery-set-${setIndex}`}
+                    >
+                      {screenshots.map((screenshot) => (
+                        <figure className="project-phone" key={`${setIndex}-${screenshot.src}`}>
+                          <Image
+                            src={screenshot.src}
+                            alt={setIndex === 0 ? screenshot.alt : ""}
+                            width={1284}
+                            height={2778}
+                            sizes="(max-width: 720px) 44vw, 19vw"
+                          />
+                        </figure>
+                      ))}
+                    </div>
+                  ))}
+                </div>
               </div>
               <span className="detail-code" aria-hidden="true">
-                NS / {project.slug.toUpperCase()} / 04 PRODUCT VIEWS
+                NS / {project.slug.toUpperCase()} / {String(project.screenshots.length).padStart(2, "0")} PRODUCT VIEWS
               </span>
               <span className="detail-status" aria-hidden="true">{project.status}</span>
             </div>

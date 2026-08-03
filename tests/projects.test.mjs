@@ -16,6 +16,7 @@ const requiredTextFields = [
   "status",
   "url",
   "logo",
+  "showcase",
   "overview",
   "challenge",
   "approach",
@@ -42,12 +43,13 @@ test("project catalogue has complete, uniquely addressable records", () => {
     assert.ok(project.services.length > 0);
     assert.ok(project.technology.length > 0);
     assert.ok(Array.isArray(project.screenshots));
+    assert.ok(["mobile-screens", "application-flow", "fallback"].includes(project.showcase));
     assert.equal(typeof project.featured, "boolean");
     assert.equal(new URL(project.url).protocol, "https:");
   }
 });
 
-test("Keeps includes the four supplied product screenshots", () => {
+test("Keeps includes all seven supplied product screenshots", () => {
   // Arrange
   const keeps = getProjectBySlug("keeps");
 
@@ -56,12 +58,36 @@ test("Keeps includes the four supplied product screenshots", () => {
 
   // Assert
   assert.deepEqual(screenshotPaths, [
-    "/images/projects/keeps-1.png",
-    "/images/projects/keeps-2.png",
-    "/images/projects/keeps-3.png",
-    "/images/projects/keeps-4.png",
+    "/images/projects/keeps-app-store-1.png",
+    "/images/projects/keeps-app-store-2.png",
+    "/images/projects/keeps-app-store-3.png",
+    "/images/projects/keeps-app-store-4.png",
+    "/images/projects/keeps-app-store-5.png",
+    "/images/projects/keeps-app-store-6.png",
+    "/images/projects/keeps-app-store-7.png",
   ]);
   assert.ok(keeps?.screenshots.every((screenshot) => screenshot.alt.length > 0));
+});
+
+test("Workouch includes all seven supplied product screenshots", () => {
+  // Arrange
+  const workouch = getProjectBySlug("workouch");
+
+  // Act
+  const screenshotPaths = workouch?.screenshots.map((screenshot) => screenshot.src);
+
+  // Assert
+  assert.deepEqual(screenshotPaths, [
+    "/images/projects/workouch-1.png",
+    "/images/projects/workouch-2.png",
+    "/images/projects/workouch-3.png",
+    "/images/projects/workouch-4.png",
+    "/images/projects/workouch-5.png",
+    "/images/projects/workouch-6.png",
+    "/images/projects/workouch-7.png",
+  ]);
+  assert.equal(workouch?.showcase, "mobile-screens");
+  assert.ok(workouch?.screenshots.every((screenshot) => screenshot.alt.length > 0));
 });
 
 test("project catalogue contains the three supplied live products", () => {

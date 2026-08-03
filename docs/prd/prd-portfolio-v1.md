@@ -73,6 +73,7 @@ Nosiah Studios needs a credible first-release portfolio for prospective clients,
 - **AC-011 [WEB]:** Given the supplied project catalogue, when work pages render, then Keeps, Resumie, and Workouch have unique case studies and a valid live-project URL.
 - **AC-012 [WEB]:** Given a project card on the homepage or work archive, when it renders, then the center beacon shows that project's locally stored official logo instead of a generated initial.
 - **AC-013 [WEB]:** Given a project with supplied screenshots, when its detail route renders, then the orbit placeholder is replaced by an optimized, accessible, responsive product-screen gallery while projects without screenshots retain the fallback visual.
+- **AC-014 [WEB]:** Given the Resumie detail route, when its showcase renders, then a fictional company, Software Engineer role, and sample job description appear as source input on the left while a tailored resume and matched cover letter appear as the generated outputs on the right.
 
 ## Decisions
 
@@ -114,3 +115,6 @@ Nosiah Studios needs a credible first-release portfolio for prospective clients,
 | 2026-08-03 | Codex | Shifted public positioning from a personal portfolio to a Nosiah Studios-first voice. |
 | 2026-08-03 | Codex | Added locally stored official project logos to shared homepage and work cards. |
 | 2026-08-04 | Codex | Added the four supplied Keeps mobile screenshots to its case-study hero. |
+| 2026-08-04 | Codex | Expanded the Keeps case-study hero to seven App Store screenshots in an infinite carousel. |
+| 2026-08-04 | Codex | Added seven Workouch App Store screenshots using the shared infinite project carousel. |
+| 2026-08-04 | Codex | Added a reference-informed Resumie job-to-application workflow showcase. |
