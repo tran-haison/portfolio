@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -67,14 +68,45 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <span aria-hidden="true">↗</span>
           </a>
 
-          <div className="project-hero-visual" aria-hidden="true">
-            <div className="project-detail-grid" />
-            <div className="detail-orbit detail-orbit-one" />
-            <div className="detail-orbit detail-orbit-two" />
-            <div className="detail-core">{project.title.slice(0, 1)}</div>
-            <span className="detail-code">NS / {project.slug.toUpperCase()} / {project.year}</span>
-            <span className="detail-status">{project.status}</span>
-          </div>
+          {project.screenshots.length > 0 ? (
+            <div className="project-hero-visual project-screen-gallery">
+              <div className="project-detail-grid" aria-hidden="true" />
+              <div className="screen-gallery-glow" aria-hidden="true" />
+              <div
+                className="screen-gallery-phones"
+                role="group"
+                aria-label={`${project.title} mobile app screens`}
+              >
+                {project.screenshots.map((screenshot, index) => (
+                  <figure
+                    className={`project-phone project-phone-${index + 1}`}
+                    key={screenshot.src}
+                  >
+                    <Image
+                      src={screenshot.src}
+                      alt={screenshot.alt}
+                      width={1012}
+                      height={2191}
+                      sizes="(max-width: 720px) 36vw, 19vw"
+                    />
+                  </figure>
+                ))}
+              </div>
+              <span className="detail-code" aria-hidden="true">
+                NS / {project.slug.toUpperCase()} / 04 PRODUCT VIEWS
+              </span>
+              <span className="detail-status" aria-hidden="true">{project.status}</span>
+            </div>
+          ) : (
+            <div className="project-hero-visual" aria-hidden="true">
+              <div className="project-detail-grid" />
+              <div className="detail-orbit detail-orbit-one" />
+              <div className="detail-orbit detail-orbit-two" />
+              <div className="detail-core">{project.title.slice(0, 1)}</div>
+              <span className="detail-code">NS / {project.slug.toUpperCase()} / {project.year}</span>
+              <span className="detail-status">{project.status}</span>
+            </div>
+          )}
         </header>
 
         <section className="section-shell project-overview" aria-labelledby="overview-title">

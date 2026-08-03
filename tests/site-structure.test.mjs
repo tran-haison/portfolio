@@ -126,6 +126,19 @@ test("work detail route is static and rejects unknown slugs", async () => {
   assert.match(detailRoute, /Visit live project/);
 });
 
+test("work detail route renders optimized project screenshot galleries", async () => {
+  // Arrange
+  const detailRoute = await source("src/app/work/[slug]/page.tsx");
+
+  // Assert
+  assert.match(detailRoute, /import Image from "next\/image"/);
+  assert.match(detailRoute, /project\.screenshots\.map/);
+  assert.match(detailRoute, /src=\{screenshot\.src\}/);
+  assert.match(detailRoute, /width=\{1012\}/);
+  assert.match(detailRoute, /height=\{2191\}/);
+  assert.match(detailRoute, /className="screen-gallery-phones"/);
+});
+
 test("shared project cards render optimized project logos instead of initials", async () => {
   // Arrange
   const projectCard = await source("src/components/project-card.tsx");

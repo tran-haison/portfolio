@@ -2,7 +2,7 @@
 
 **Status:** Approved  
 **Owner:** Portfolio owner  
-**Last updated:** 2026-08-03  
+**Last updated:** 2026-08-04
 **Operator profile:** Hybrid
 
 ## Purpose and users
@@ -72,6 +72,7 @@ Nosiah Studios needs a credible first-release portfolio for prospective clients,
 - **AC-010 [WEB]:** Given the approved brand direction, when the homepage and shell render, then Nosiah Studios, the four stated services, worldwide availability, email, LinkedIn, and GitHub are present without personal-name or first-person-singular positioning.
 - **AC-011 [WEB]:** Given the supplied project catalogue, when work pages render, then Keeps, Resumie, and Workouch have unique case studies and a valid live-project URL.
 - **AC-012 [WEB]:** Given a project card on the homepage or work archive, when it renders, then the center beacon shows that project's locally stored official logo instead of a generated initial.
+- **AC-013 [WEB]:** Given a project with supplied screenshots, when its detail route renders, then the orbit placeholder is replaced by an optimized, accessible, responsive product-screen gallery while projects without screenshots retain the fallback visual.
 
 ## Decisions
 
@@ -112,3 +113,4 @@ Nosiah Studios needs a credible first-release portfolio for prospective clients,
 | 2026-08-03 | Codex | Added brand contact channels and the Keeps, Resumie, and Workouch content handoff. |
 | 2026-08-03 | Codex | Shifted public positioning from a personal portfolio to a Nosiah Studios-first voice. |
 | 2026-08-03 | Codex | Added locally stored official project logos to shared homepage and work cards. |
+| 2026-08-04 | Codex | Added the four supplied Keeps mobile screenshots to its case-study hero. |

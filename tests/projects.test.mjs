@@ -41,9 +41,27 @@ test("project catalogue has complete, uniquely addressable records", () => {
 
     assert.ok(project.services.length > 0);
     assert.ok(project.technology.length > 0);
+    assert.ok(Array.isArray(project.screenshots));
     assert.equal(typeof project.featured, "boolean");
     assert.equal(new URL(project.url).protocol, "https:");
   }
+});
+
+test("Keeps includes the four supplied product screenshots", () => {
+  // Arrange
+  const keeps = getProjectBySlug("keeps");
+
+  // Act
+  const screenshotPaths = keeps?.screenshots.map((screenshot) => screenshot.src);
+
+  // Assert
+  assert.deepEqual(screenshotPaths, [
+    "/images/projects/keeps-1.png",
+    "/images/projects/keeps-2.png",
+    "/images/projects/keeps-3.png",
+    "/images/projects/keeps-4.png",
+  ]);
+  assert.ok(keeps?.screenshots.every((screenshot) => screenshot.alt.length > 0));
 });
 
 test("project catalogue contains the three supplied live products", () => {

@@ -8,6 +8,7 @@
  * @property {string} status
  * @property {string} url
  * @property {string} logo
+ * @property {{src: string, alt: string}[]} screenshots
  * @property {boolean} featured
  * @property {string[]} services
  * @property {string[]} technology
@@ -31,6 +32,24 @@ export const projects = [
     status: "Coming soon",
     url: "https://keeps.nosiahstudios.com/",
     logo: "/images/projects/keeps-logo.png",
+    screenshots: [
+      {
+        src: "/images/projects/keeps-1.png",
+        alt: "Keeps stamp camera framing an illustrated mushroom memory",
+      },
+      {
+        src: "/images/projects/keeps-2.png",
+        alt: "Keeps stamp camera framing a dog cutout",
+      },
+      {
+        src: "/images/projects/keeps-3.png",
+        alt: "Keeps calendar archive filled with stamp-framed memories",
+      },
+      {
+        src: "/images/projects/keeps-4.png",
+        alt: "Keeps collection of playful stamp-framed photos",
+      },
+    ],
     featured: true,
     services: ["Mobile app development", "Product design", "UI/UX design"],
     technology: ["Mobile application", "Camera and media", "Photo collections", "Private sharing"],
@@ -55,6 +74,7 @@ export const projects = [
     status: "Live",
     url: "https://www.resumie.space/",
     logo: "/images/projects/resumie-logo.png",
+    screenshots: [],
     featured: true,
     services: ["Web development", "Full-stack development", "UI/UX design"],
     technology: ["Next.js", "AI generation", "GitHub integration", "PDF and DOCX export"],
@@ -79,6 +99,7 @@ export const projects = [
     status: "Live",
     url: "https://workouch.nosiahstudios.com/",
     logo: "/images/projects/workouch-logo.png",
+    screenshots: [],
     featured: true,
     services: ["Mobile app development", "Full-stack development", "UI/UX design"],
     technology: ["iOS and Android", "AI generation", "Cloud sync", "In-app subscriptions"],
