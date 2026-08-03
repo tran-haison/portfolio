@@ -57,6 +57,15 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           </div>
           <h1>{project.title}</h1>
           <p>{project.summary}</p>
+          <a
+            className="button button-primary project-live-link"
+            href={project.url}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Visit live project
+            <span aria-hidden="true">↗</span>
+          </a>
 
           <div className="project-hero-visual" aria-hidden="true">
             <div className="project-detail-grid" />
@@ -130,4 +139,3 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     </main>
   );
 }
-

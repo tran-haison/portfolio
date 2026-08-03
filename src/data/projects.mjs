@@ -6,6 +6,8 @@
  * @property {string} year
  * @property {string} summary
  * @property {string} status
+ * @property {string} url
+ * @property {string} logo
  * @property {boolean} featured
  * @property {string[]} services
  * @property {string[]} technology
@@ -20,70 +22,76 @@
 /** @type {Project[]} */
 export const projects = [
   {
-    slug: "origin",
-    title: "Origin",
-    discipline: "Identity / Portfolio",
+    slug: "keeps",
+    title: "Keeps",
+    discipline: "Mobile / Social photography",
     year: "2026",
     summary:
-      "The living digital identity for Nosiah Studios—designed as a quiet signal in a noisy web.",
-    status: "In development",
+      "A calm mobile space for capturing, collecting, organizing, and gently sharing stamp-framed memories.",
+    status: "Coming soon",
+    url: "https://keeps.nosiahstudios.com/",
+    logo: "/images/projects/keeps-logo.png",
     featured: true,
-    services: ["Creative direction", "Interface design", "Frontend engineering"],
-    technology: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    services: ["Mobile app development", "Product design", "UI/UX design"],
+    technology: ["Mobile application", "Camera and media", "Photo collections", "Private sharing"],
     overview:
-      "Origin is this portfolio itself: a flexible home for the studio, its work, and the person behind it. The system pairs editorial restraint with an orbital visual language.",
+      "Keeps turns everyday photos into small digital keepsakes. Its stamp camera, calendar archive, collections, page projects, friends, chat, and visibility controls are designed around memory rather than public performance.",
     challenge:
-      "Create an identity that can hold both a studio practice and an individual portfolio without making either feel secondary—or relying on familiar agency tropes.",
+      "Most photo products optimize for feeds, attention, and volume. Keeps needed a gentler way to capture the days that matter, find them again, and share only the moments a person chooses.",
     approach:
-      "A dark-only foundation, precise typography, luminous technical lines, and content-first layouts create a recognizable system that remains fast and practical.",
+      "The product is organized into quiet, focused spaces: playful stamp-framed capture, calendar and collection views for retrieval, scrapbook-like pages, and controlled sharing with trusted people.",
     outcome:
-      "The first release establishes the brand shell and a reusable case-study structure. Real project material can now replace placeholders without redesigning the experience.",
-    accent: "#b8ff3d",
-    accentSoft: "rgba(184, 255, 61, 0.14)",
+      "Keeps now has a coherent product concept and an early-access experience that communicates its warm, memory-first direction while the mobile release is prepared.",
+    accent: "#ffb565",
+    accentSoft: "rgba(255, 181, 101, 0.14)",
   },
   {
-    slug: "signal",
-    title: "Signal",
-    discipline: "Product / Web",
-    year: "Next",
+    slug: "resumie",
+    title: "Resumie",
+    discipline: "AI / SaaS / Web",
+    year: "2026",
     summary:
-      "A reserved space for the product build that best demonstrates clear thinking under complexity.",
-    status: "Case study in progress",
+      "An AI application builder that creates a job-specific resume first, then writes its matching cover letter.",
+    status: "Live",
+    url: "https://www.resumie.space/",
+    logo: "/images/projects/resumie-logo.png",
     featured: true,
-    services: ["Product strategy", "UX systems", "Full-stack development"],
-    technology: ["Add your stack", "Add your tools", "Add your platform"],
+    services: ["Web development", "Full-stack development", "UI/UX design"],
+    technology: ["Next.js", "AI generation", "GitHub integration", "PDF and DOCX export"],
     overview:
-      "Signal is an editorial placeholder for a flagship product case study. Replace this record with the real project name, context, visuals, and verified outcomes.",
+      "Resumie helps software engineers turn their profile and a job description into a focused application. It uses resume, GitHub, and LinkedIn context to tailor an ATS-friendly resume before producing a concise cover letter grounded in the finished document.",
     challenge:
-      "Document the real problem in plain language: who experienced it, what was constrained, and why the existing approach was not enough.",
+      "Developers applying to multiple roles repeatedly reshape the same experience, projects, and skills—and then write a separate letter without a reliable connection to the final resume.",
     approach:
-      "Explain the decisions that mattered, the alternatives considered, and how design and engineering worked together to reach the result.",
+      "Resumie collects a candidate profile once, analyzes each target role, builds the tailored resume first, and then connects its strongest evidence to the company and role in a matching cover letter.",
     outcome:
-      "Add measurable, verifiable outcomes when available. Until then, this page deliberately avoids manufacturing a success story.",
+      "The live product now supports an end-to-end application workflow with ATS-oriented structure, GitHub context, and polished PDF or Word exports for both documents.",
     accent: "#60e5ff",
     accentSoft: "rgba(96, 229, 255, 0.14)",
   },
   {
-    slug: "orbit",
-    title: "Orbit",
-    discipline: "Experimental / Build",
-    year: "Next",
+    slug: "workouch",
+    title: "Workouch",
+    discipline: "AI / Mobile / Fitness",
+    year: "2026",
     summary:
-      "A future home for experimental work, creative technology, or a project that bends the usual rules.",
-    status: "Case study in progress",
+      "A cross-platform AI workout planner that generates personalized routines and tracks every training session.",
+    status: "Live",
+    url: "https://workouch.nosiahstudios.com/",
+    logo: "/images/projects/workouch-logo.png",
     featured: true,
-    services: ["Creative technology", "Prototyping", "Interaction design"],
-    technology: ["Add your stack", "Add your tools", "Add your platform"],
+    services: ["Mobile app development", "Full-stack development", "UI/UX design"],
+    technology: ["iOS and Android", "AI generation", "Cloud sync", "In-app subscriptions"],
     overview:
-      "Orbit reserves room for work driven by curiosity: a prototype, visual experiment, open-source tool, or unconventional client collaboration.",
+      "Workouch combines AI workout generation, a library of more than 1,500 exercises, guided sessions, health metrics, workout history, and personal records in one mobile fitness product.",
     challenge:
-      "Describe the question that started the experiment and the technical or creative boundary you wanted to test.",
+      "People need training plans that match their time, equipment, experience, goals, and limitations—but building those plans and consistently recording progress can become work before the workout starts.",
     approach:
-      "Show the iterations, failures, and discoveries that made the work valuable—not only the polished final frame.",
+      "Two creation paths serve different mindsets: Shuffle turns a natural-language request into a routine in seconds, while Neat provides structured control over duration, intensity, goals, equipment, location, and target areas.",
     outcome:
-      "Capture what the experiment taught you and how that learning changed later work. Replace this guidance when the case study is ready.",
-    accent: "#ff8bd8",
-    accentSoft: "rgba(255, 139, 216, 0.14)",
+      "Workouch is available on iOS and Android with personalized workout generation, guided training, progress tracking, secure account sync, and free and paid access tiers.",
+    accent: "#b8ff3d",
+    accentSoft: "rgba(184, 255, 61, 0.14)",
   },
 ];
 
@@ -108,4 +116,3 @@ export function getNextProject(slug) {
 
   return projects[(currentIndex + 1) % projects.length];
 }
-

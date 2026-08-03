@@ -14,7 +14,7 @@
 
 ## Project data constraints
 
-Every project must have a unique non-empty slug, title, discipline, year, summary, status, services, technology list, overview, challenge, approach, and outcome. `featured` controls homepage inclusion. Unknown client metrics must not be represented as facts.
+Every project must have a unique non-empty slug, title, discipline, year, summary, status, valid HTTPS live URL, local logo path, services, technology list, overview, challenge, approach, and outcome. `featured` controls homepage inclusion. Unknown client metrics or private implementation details must not be represented as facts.
 
 ## Failure and empty states
 
@@ -37,5 +37,6 @@ Every project must have a unique non-empty slug, title, discipline, year, summar
 | --- | --- |
 | AC-001–002 | lint + browser semantic/keyboard inspection |
 | AC-003–006 | Node unit tests + Next static build |
-| AC-007–008 | responsive browser inspection + CSS rule inspection |
-
+| AC-007–009 | responsive browser inspection + CSS/image rule inspection |
+| AC-010–011 | Node content-contract tests + Next static build + link inspection |
+| AC-012 | Node image-contract test + responsive browser image inspection |

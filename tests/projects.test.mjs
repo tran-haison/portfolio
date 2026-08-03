@@ -14,6 +14,8 @@ const requiredTextFields = [
   "year",
   "summary",
   "status",
+  "url",
+  "logo",
   "overview",
   "challenge",
   "approach",
@@ -40,6 +42,28 @@ test("project catalogue has complete, uniquely addressable records", () => {
     assert.ok(project.services.length > 0);
     assert.ok(project.technology.length > 0);
     assert.equal(typeof project.featured, "boolean");
+    assert.equal(new URL(project.url).protocol, "https:");
+  }
+});
+
+test("project catalogue contains the three supplied live products", () => {
+  // Arrange
+  const expectedProjects = new Map([
+    ["keeps", "https://keeps.nosiahstudios.com/"],
+    ["resumie", "https://www.resumie.space/"],
+    ["workouch", "https://workouch.nosiahstudios.com/"],
+  ]);
+
+  // Act / Assert
+  assert.deepEqual(
+    projects.map((project) => project.slug),
+    [...expectedProjects.keys()],
+  );
+
+  for (const [slug, url] of expectedProjects) {
+    const project = getProjectBySlug(slug);
+    assert.equal(project?.url, url);
+    assert.equal(project?.logo, `/images/projects/${slug}-logo.png`);
   }
 });
 
@@ -69,4 +93,3 @@ test("next project navigation wraps around the catalogue", () => {
   assert.equal(afterFirst, projects[1]);
   assert.equal(afterLast, firstProject);
 });
-

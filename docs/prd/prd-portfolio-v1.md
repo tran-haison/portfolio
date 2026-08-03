@@ -14,7 +14,7 @@ Nosiah Studios needs a credible first-release portfolio for prospective clients,
 - Responsive brand shell and global navigation.
 - Homepage with positioning, selected work, capability/stack, studio story, and contact CTA.
 - Work archive and statically generated project detail pages.
-- Honest placeholder state for case studies whose details are not supplied.
+- Brand-first studio positioning, contact details, professional links, and three real project case studies.
 - Metadata, keyboard navigation, reduced-motion handling, and visible focus states.
 
 ### Out of scope
@@ -65,6 +65,13 @@ Nosiah Studios needs a credible first-release portfolio for prospective clients,
 
 - **AC-007 [WEB]:** Given a viewport from 320px upward, when primary pages render, then no required content depends on horizontal scrolling and touch targets remain operable.
 - **AC-008 [WEB]:** Given `prefers-reduced-motion: reduce`, when the site renders, then decorative animation and smooth scrolling are disabled.
+- **AC-009 [WEB]:** Given the homepage hero, when it renders, then an optimized decorative neural-brain visual provides CSS-driven motion without replacing accessible content.
+
+**US-005:** As a prospective client or hiring partner, I want clear studio capabilities and live-project links so that I can evaluate and contact Nosiah Studios.
+
+- **AC-010 [WEB]:** Given the approved brand direction, when the homepage and shell render, then Nosiah Studios, the four stated services, worldwide availability, email, LinkedIn, and GitHub are present without personal-name or first-person-singular positioning.
+- **AC-011 [WEB]:** Given the supplied project catalogue, when work pages render, then Keeps, Resumie, and Workouch have unique case studies and a valid live-project URL.
+- **AC-012 [WEB]:** Given a project card on the homepage or work archive, when it renders, then the center beacon shows that project's locally stored official logo instead of a generated initial.
 
 ## Decisions
 
@@ -74,12 +81,12 @@ Nosiah Studios needs a credible first-release portfolio for prospective clients,
 | Content | Local data module | Best fit for a small, static portfolio; avoids premature CMS complexity. |
 | Theme | Dark-only V1 | A deliberate brand decision rather than an automatic system theme. |
 | Motion | CSS-first, progressive enhancement | Keeps Server Components and low client JavaScript. |
-| Unconfirmed facts | Explicit “case study in progress” copy | Prevents fabricated portfolio claims. |
+| Unconfirmed implementation details | Product-level technology labels only | Prevents private framework or infrastructure assumptions from being presented as facts. |
 
 ## Analytics, risks, rollout
 
 - Analytics is deferred until a vendor and privacy posture are selected.
-- Main risk: placeholder work content reduces credibility until real case studies are supplied. Owner action: replace objects in the project data module.
+- Main risk: project-specific framework and infrastructure details are not yet confirmed. Owner action: supply repositories or an authoritative stack list before adding deeper technical claims.
 - Rollout: local verification followed by standard static-capable Next.js deployment.
 
 ## RACI
@@ -102,3 +109,6 @@ Nosiah Studios needs a credible first-release portfolio for prospective clients,
 | Date | Author | Change |
 | --- | --- | --- |
 | 2026-08-03 | Codex | Initial V1 requirements from approved discovery direction. |
+| 2026-08-03 | Codex | Added brand contact channels and the Keeps, Resumie, and Workouch content handoff. |
+| 2026-08-03 | Codex | Shifted public positioning from a personal portfolio to a Nosiah Studios-first voice. |
+| 2026-08-03 | Codex | Added locally stored official project logos to shared homepage and work cards. |

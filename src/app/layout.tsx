@@ -17,12 +17,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://nosiahstudios.com"),
   title: {
     default: "Nosiah Studios — Digital work for the near future",
     template: "%s — Nosiah Studios",
   },
   description:
-    "Nosiah Studios is an independent digital studio creating thoughtful products, precise interfaces, and modern web experiences.",
+    "Nosiah Studios is an independent digital studio building thoughtful web and mobile products where design and engineering meet.",
   keywords: [
     "Nosiah Studios",
     "digital studio",
@@ -30,13 +31,16 @@ export const metadata: Metadata = {
     "web development",
     "interface design",
     "product engineering",
+    "mobile app development",
   ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Nosiah Studios — Digital work for the near future",
     description:
       "Thoughtful products, precise interfaces, and digital experiences built where design and engineering meet.",
     type: "website",
-    locale: "en_AU",
     siteName: "Nosiah Studios",
   },
 };

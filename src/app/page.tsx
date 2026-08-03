@@ -7,23 +7,23 @@ import { projects } from "@/data/projects.mjs";
 const capabilities = [
   {
     index: "01",
-    title: "Product thinking",
-    copy: "Turning ambiguous ideas into focused, useful digital products with a clear point of view.",
+    title: "Web development",
+    copy: "Designing and shipping responsive product sites, web applications, and polished frontend systems.",
   },
   {
     index: "02",
-    title: "Interface systems",
-    copy: "Building visual languages and component systems that stay coherent as the product grows.",
+    title: "Mobile app development",
+    copy: "Building thoughtful mobile products for iOS and Android, from the first interaction through release.",
   },
   {
     index: "03",
-    title: "Full-stack builds",
-    copy: "Moving from prototype to production with modern web architecture, thoughtful data, and clean delivery.",
+    title: "Full-stack development",
+    copy: "Connecting interfaces, application logic, data, integrations, and deployment into complete products.",
   },
   {
     index: "04",
-    title: "Creative technology",
-    copy: "Using interaction, motion, and emerging tools to make digital experiences feel memorable—not noisy.",
+    title: "UI/UX design",
+    copy: "Creating clear user flows and visual systems where usability, personality, and engineering stay aligned.",
   },
 ];
 
@@ -33,7 +33,10 @@ const currentStack = [
   "TypeScript",
   "Tailwind CSS",
   "Node.js",
-  "Design systems",
+  "Kotlin",
+  "Dart / Flutter",
+  "Python",
+  "Java",
 ];
 
 export default function Home() {
@@ -45,23 +48,23 @@ export default function Home() {
         <div className="hero-copy">
           <p className="eyebrow hero-reveal hero-reveal-one">
             <span className="status-dot" aria-hidden="true" />
-            Independent digital studio · Melbourne / Everywhere
+            Independent digital studio · Working worldwide
           </p>
           <h1 id="hero-title" className="hero-title hero-reveal hero-reveal-two">
             Digital work for{" "}
             <span>the near future.</span>
           </h1>
           <p className="hero-intro hero-reveal hero-reveal-three">
-            Nosiah Studios creates thoughtful products, precise interfaces, and
-            digital experiences where design and engineering share the same orbit.
+            Nosiah Studios builds thoughtful web and mobile products, bringing
+            interface design and full-stack engineering into the same orbit.
           </p>
           <div className="hero-actions hero-reveal hero-reveal-four">
             <Link className="button button-primary" href="/#work">
               Explore selected work
               <span aria-hidden="true">↘</span>
             </Link>
-            <a className="text-link" href="mailto:hello@nosiah.studio">
-              hello@nosiah.studio
+            <a className="text-link" href="mailto:nosiahstudio@gmail.com">
+              nosiahstudio@gmail.com
               <span aria-hidden="true">↗</span>
             </a>
           </div>
@@ -93,9 +96,9 @@ export default function Home() {
         </div>
 
         <div className="hero-footnote">
-          <span>Creative direction</span>
-          <span>Interface design</span>
-          <span>Product engineering</span>
+          <span>Web development</span>
+          <span>Mobile applications</span>
+          <span>Full-stack engineering</span>
         </div>
       </section>
 
@@ -150,8 +153,8 @@ export default function Home() {
           <p className="eyebrow">Current frequency / 03</p>
           <h2 id="stack-title">A modern stack, chosen with intent.</h2>
           <p>
-            The portfolio currently runs on these tools. Replace and expand this
-            list as your complete technology profile comes into focus.
+            A practical cross-platform toolkit shaped by real web, mobile, and
+            full-stack product work.
           </p>
         </div>
         <ul className="stack-grid" aria-label="Current technology stack">
@@ -171,18 +174,25 @@ export default function Home() {
           <span>Built with care</span>
         </div>
         <div className="about-copy">
-          <p className="eyebrow">Studio / Self / 04</p>
-          <h2 id="about-title">One practice. Two perspectives.</h2>
+          <p className="eyebrow">Studio / Practice / 04</p>
+          <h2 id="about-title">One studio. End-to-end practice.</h2>
           <p className="about-lead">
-            Nosiah Studios is the umbrella for the work. Behind it is an individual
-            point of view—curious, technical, and invested in the details that make
-            software feel considered.
+            Nosiah Studios is an independent digital practice working across web,
+            mobile, full-stack development, and UI/UX design.
           </p>
           <p>
-            The studio format creates room to collaborate broadly while keeping the
-            work personal. Strategy, visual systems, and implementation stay close
-            enough to influence one another from beginning to end.
+            Every project is shaped as one connected practice, keeping product
+            thinking, visual systems, and implementation close from the first idea
+            through to a shipped digital product.
           </p>
+          <div className="about-links" aria-label="Studio links">
+            <a href="https://www.linkedin.com/in/tranhaison/" target="_blank" rel="noreferrer">
+              LinkedIn <span aria-hidden="true">↗</span>
+            </a>
+            <a href="https://github.com/tran-haison" target="_blank" rel="noreferrer">
+              GitHub <span aria-hidden="true">↗</span>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -193,7 +203,7 @@ export default function Home() {
             Have something{" "}
             <span>worth building?</span>
           </h2>
-          <a className="contact-link" href="mailto:hello@nosiah.studio">
+          <a className="contact-link" href="mailto:nosiahstudio@gmail.com">
             Start a conversation
             <span aria-hidden="true">↗</span>
           </a>

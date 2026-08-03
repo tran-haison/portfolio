@@ -1,4 +1,5 @@
 import type { CSSProperties } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 import { projects } from "@/data/projects.mjs";
@@ -24,7 +25,14 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
             <span />
           </div>
           <div className="project-beacon">
-            <span>{project.title.slice(0, 1)}</span>
+            <Image
+              className="project-logo"
+              src={project.logo}
+              alt=""
+              width={512}
+              height={512}
+              sizes="120px"
+            />
           </div>
           <span className="project-status">{project.status}</span>
         </div>
@@ -43,4 +51,3 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
     </article>
   );
 }
-

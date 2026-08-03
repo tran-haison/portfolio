@@ -11,11 +11,13 @@ export function SiteFooter() {
             <small>Studios</small>
           </span>
         </Link>
-        <p>Independent digital studio · Melbourne, Australia</p>
+        <p>Independent digital studio · Working worldwide</p>
         <div className="footer-links">
           <Link href="/work">Work</Link>
           <Link href="/#about">Studio</Link>
-          <a href="mailto:hello@nosiah.studio">Email</a>
+          <a href="https://www.linkedin.com/in/tranhaison/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://github.com/tran-haison" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="mailto:nosiahstudio@gmail.com">Email</a>
         </div>
         <p className="footer-fineprint">
           © {new Date().getFullYear()} Nosiah Studios
@@ -24,4 +26,3 @@ export function SiteFooter() {
     </footer>
   );
 }
-

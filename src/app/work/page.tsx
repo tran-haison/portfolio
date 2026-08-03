@@ -23,7 +23,7 @@ export default function WorkPage() {
             A growing record of products, systems, and experiments created under
             Nosiah Studios. Each entry is designed to hold the thinking behind the work.
           </p>
-          <span>{String(projects.length).padStart(2, "0")} entries · 2026—ongoing</span>
+          <span>{String(projects.length).padStart(2, "0")} live products · 2026—ongoing</span>
         </div>
       </section>
 

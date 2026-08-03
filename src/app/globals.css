@@ -712,11 +712,13 @@ button {
 .project-card {
   --project-accent: var(--signal);
   --project-accent-soft: var(--signal-soft);
+  min-width: 0;
   background: var(--background);
 }
 
 .project-card > a {
   display: grid;
+  min-width: 0;
   grid-template-columns: minmax(280px, 0.83fr) 1.17fr;
   min-height: 31rem;
 }
@@ -806,6 +808,13 @@ button {
   font-size: clamp(1.5rem, 4vw, 3rem);
 }
 
+.project-logo {
+  width: 82%;
+  height: 82%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 1rem var(--project-accent-soft));
+}
+
 .project-scope {
   position: absolute;
   bottom: 1.25rem;
@@ -859,6 +868,7 @@ button {
 .project-summary {
   color: var(--muted-bright);
   font-size: 0.9rem;
+  overflow-wrap: anywhere;
 }
 
 .project-meta {
@@ -1077,6 +1087,34 @@ button {
   line-height: 1.55;
 }
 
+.about-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.about-links a {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--line-strong);
+  color: var(--muted-bright);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: border-color 180ms ease, background 180ms ease, color 180ms ease;
+}
+
+.about-links a:hover {
+  border-color: var(--signal);
+  background: var(--signal-soft);
+  color: var(--foreground);
+}
+
 .contact-section {
   border-top: 1px solid var(--line);
   background:
@@ -1244,6 +1282,13 @@ button {
   color: var(--muted-bright);
   font-size: clamp(1.05rem, 1.7vw, 1.4rem);
   line-height: 1.6;
+}
+
+.project-live-link {
+  width: fit-content;
+  margin: -1.5rem 0 3.5rem auto;
+  border-color: var(--project-accent);
+  background: var(--project-accent);
 }
 
 .project-hero-visual {
@@ -1683,7 +1728,7 @@ button {
 
   .project-info {
     min-height: 19rem;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: minmax(0, 1fr) auto;
     padding: 1.5rem;
   }
 

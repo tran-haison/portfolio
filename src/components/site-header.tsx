@@ -26,7 +26,7 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <a className="header-contact" href="mailto:hello@nosiah.studio">
+        <a className="header-contact" href="mailto:nosiahstudio@gmail.com">
           <span>Let&apos;s talk</span>
           <span aria-hidden="true">↗</span>
         </a>
@@ -34,4 +34,3 @@ export function SiteHeader() {
     </header>
   );
 }
-
