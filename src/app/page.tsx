@@ -28,15 +28,14 @@ const capabilities = [
 ];
 
 const currentStack = [
-  "Next.js",
+  "Android",
+  "iOS",
+  "Flutter",
   "React",
-  "TypeScript",
-  "Tailwind CSS",
+  "Next.js",
   "Node.js",
-  "Kotlin",
-  "Dart / Flutter",
   "Python",
-  "Java",
+  "AWS",
 ];
 
 export default function Home() {
@@ -116,7 +115,12 @@ export default function Home() {
 
         <div className="project-list">
           {featuredProjects.map((project, index) => (
-            <ProjectCard key={project.slug} project={project} index={index} />
+            <ProjectCard
+              key={project.slug}
+              project={project}
+              index={index}
+              reverse={index % 2 === 1}
+            />
           ))}
         </div>
       </section>
@@ -169,6 +173,14 @@ export default function Home() {
 
       <section id="about" className="section-shell about-section" aria-labelledby="about-title">
         <div className="about-marker" aria-hidden="true">
+          <Image
+            className="about-heart-image"
+            src="/images/studio-heart.webp"
+            alt=""
+            width={1254}
+            height={1254}
+            sizes="(max-width: 980px) 85vw, 34vw"
+          />
           <span>Independent</span>
           <span>Human-led</span>
           <span>Built with care</span>

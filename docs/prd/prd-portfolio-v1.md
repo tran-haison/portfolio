@@ -117,4 +117,5 @@ Nosiah Studios needs a credible first-release portfolio for prospective clients,
 | 2026-08-04 | Codex | Added the four supplied Keeps mobile screenshots to its case-study hero. |
 | 2026-08-04 | Codex | Expanded the Keeps case-study hero to seven App Store screenshots in an infinite carousel. |
 | 2026-08-04 | Codex | Added seven Workouch App Store screenshots using the shared infinite project carousel. |
+| 2026-08-04 | Codex | Alternated the homepage project-card composition while preserving the archive layout. |
 | 2026-08-04 | Codex | Added a reference-informed Resumie job-to-application workflow showcase. |

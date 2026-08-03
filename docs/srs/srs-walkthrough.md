@@ -38,6 +38,9 @@
 - Desktop Resumie detail: project metadata, live URL, three narrative sections, and next-project navigation present.
 - Desktop Keeps detail: all seven App Store screenshots remain upright at their native ratio and move through a seamless continuous loop with no added image treatment or cropping.
 - Desktop Workouch detail: all seven App Store screenshots use the same native-ratio carousel treatment, with clear spacing around the project and status labels.
+- Desktop homepage: selected work alternates its two-column composition, placing Resumie's text before its logo visual while Keeps and Workouch retain the logo-first order.
+- Desktop homepage: Keeps, Resumie, and Workouch use equal-width logo frames regardless of title or summary length.
+- Desktop homepage: each project text frame places the project name with its year, followed by a description-and-arrow row that remains free of overflow.
 - Desktop Resumie detail: both workflow labels sit above aligned, equal-height frames; the upright resume and shorter cover letter retain their hierarchy and visible inset spacing.
 
 ## Hero animation follow-up
@@ -47,10 +50,16 @@
 - Motion is CSS-driven and automatically collapses under `prefers-reduced-motion: reduce`.
 - Added the narrow root hydration guard for browser extensions and the Next.js smooth-scroll marker.
 
+## Studio visual follow-up
+
+- Normalized the `Studio / Practice / 04` eyebrow typography with the other section subtitles.
+- Added `public/images/studio-heart.webp`, a generated futuristic heart artwork optimized for the dark studio section.
+- Added a restrained CSS double-beat animation with automatic reduced-motion suppression.
+
 ## Content handoff
 
 Before public deployment, the portfolio owner should:
 
 1. Supply authoritative framework and infrastructure stacks for Keeps, Resumie, and Workouch if deeper technical detail is wanted.
-2. Add project screenshots or videos for Workouch; Keeps and Resumie now use project-specific showcases.
+2. Add project videos only if richer motion is wanted; Keeps, Resumie, and Workouch now use project-specific showcases.
 3. Add a profile portrait only if the personal side of the portfolio should be more prominent.

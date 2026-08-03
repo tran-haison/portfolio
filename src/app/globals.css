@@ -719,8 +719,22 @@ button {
 .project-card > a {
   display: grid;
   min-width: 0;
-  grid-template-columns: minmax(280px, 0.83fr) 1.17fr;
+  grid-template-columns: minmax(280px, 0.83fr) minmax(0, 1.17fr);
   min-height: 31rem;
+}
+
+.project-card-reversed > a {
+  grid-template-columns: minmax(0, 1.17fr) minmax(280px, 0.83fr);
+}
+
+.project-card-reversed .project-visual {
+  order: 2;
+  border-right: 0;
+  border-left: 1px solid var(--line);
+}
+
+.project-card-reversed .project-info {
+  order: 1;
 }
 
 .project-visual {
@@ -836,9 +850,9 @@ button {
 
 .project-info {
   display: grid;
-  grid-template-columns: 1fr minmax(13rem, 0.85fr) auto;
-  align-items: end;
-  gap: 2rem;
+  min-width: 0;
+  align-content: end;
+  gap: clamp(3rem, 5vw, 4.5rem);
   padding: clamp(2rem, 4vw, 4rem);
   transition: background 220ms ease;
 }
@@ -847,22 +861,41 @@ button {
   background: rgba(255, 255, 255, 0.018);
 }
 
-.project-info > div:first-child p,
+.project-discipline,
 .project-summary,
-.project-meta {
+.project-year {
   margin: 0;
   color: var(--muted);
   font-size: 0.72rem;
   line-height: 1.7;
 }
 
+.project-info-heading {
+  min-width: 0;
+}
+
+.project-title-row,
+.project-description-row {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 2rem;
+}
+
+.project-title-row {
+  margin-top: 0.8rem;
+}
+
 .project-info h3 {
-  margin: 0.8rem 0 0;
+  min-width: 0;
+  margin: 0;
   font-family: var(--font-geist-mono), monospace;
   font-size: clamp(2.4rem, 5vw, 5.5rem);
   font-weight: 450;
   letter-spacing: -0.075em;
   line-height: 0.9;
+  overflow-wrap: anywhere;
 }
 
 .project-summary {
@@ -871,12 +904,8 @@ button {
   overflow-wrap: anywhere;
 }
 
-.project-meta {
-  display: flex;
-  min-height: 100%;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: space-between;
+.project-year {
+  padding-bottom: 0.2rem;
   font-family: var(--font-geist-mono), monospace;
 }
 
@@ -1016,32 +1045,25 @@ button {
 
 .about-marker {
   position: relative;
+  isolation: isolate;
   display: grid;
   aspect-ratio: 1;
+  overflow: hidden;
   place-content: center;
   border: 1px solid var(--line);
-  background:
-    linear-gradient(45deg, transparent 49.8%, var(--line) 50%, transparent 50.2%),
-    linear-gradient(-45deg, transparent 49.8%, var(--line) 50%, transparent 50.2%);
+  background: #020303;
 }
 
-.about-marker::before,
-.about-marker::after {
+.about-heart-image {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 62%;
-  aspect-ratio: 1;
-  transform: translate(-50%, -50%);
-  border: 1px solid var(--line-strong);
-  border-radius: 50%;
-  content: "";
-}
-
-.about-marker::after {
-  width: 25%;
-  border-color: var(--signal);
-  background: var(--signal-soft);
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: 50% 54%;
+  object-fit: cover;
+  will-change: transform, filter;
+  animation: studio-heartbeat 2.6s cubic-bezier(0.22, 1, 0.36, 1) infinite;
 }
 
 .about-marker span {
@@ -1054,17 +1076,17 @@ button {
   text-transform: uppercase;
 }
 
-.about-marker span:first-child {
+.about-marker span:nth-of-type(1) {
   top: 1rem;
   left: 1rem;
 }
 
-.about-marker span:nth-child(2) {
+.about-marker span:nth-of-type(2) {
   top: 50%;
   right: 1rem;
 }
 
-.about-marker span:last-child {
+.about-marker span:last-of-type {
   bottom: 1rem;
   left: 1rem;
 }
@@ -1078,6 +1100,13 @@ button {
   color: var(--muted);
   font-size: 0.9rem;
   line-height: 1.8;
+}
+
+.about-copy .eyebrow {
+  max-width: none;
+  color: var(--muted-bright);
+  font-size: 0.68rem;
+  line-height: 1.5;
 }
 
 .about-copy .about-lead {
@@ -1942,6 +1971,27 @@ button {
   }
 }
 
+@keyframes studio-heartbeat {
+  0%,
+  20%,
+  100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  6% {
+    transform: scale(1.018);
+    filter: brightness(1.04);
+  }
+  10% {
+    transform: scale(0.998);
+    filter: brightness(1);
+  }
+  15% {
+    transform: scale(1.035);
+    filter: brightness(1.08);
+  }
+}
+
 @keyframes project-gallery-scroll {
   to {
     transform: translate3d(-50%, 0, 0);
@@ -2009,21 +2059,11 @@ button {
   }
 
   .project-card > a {
-    grid-template-columns: 0.9fr 1.1fr;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   }
 
-  .project-info {
-    grid-template-columns: 1fr auto;
-  }
-
-  .project-summary {
-    grid-column: 1 / -1;
-    grid-row: 2;
-  }
-
-  .project-meta {
-    grid-column: 2;
-    grid-row: 1;
+  .project-card-reversed > a {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
   }
 
   .capabilities,
@@ -2095,16 +2135,30 @@ button {
     grid-template-columns: 1fr;
   }
 
+  .project-card-reversed .project-visual,
+  .project-card-reversed .project-info {
+    order: initial;
+  }
+
   .project-visual {
     min-height: 22rem;
     border-right: 0;
     border-bottom: 1px solid var(--line);
   }
 
+  .project-card-reversed .project-visual {
+    border-left: 0;
+  }
+
   .project-info {
     min-height: 19rem;
-    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 2.5rem;
     padding: 1.5rem;
+  }
+
+  .project-title-row,
+  .project-description-row {
+    gap: 1rem;
   }
 
   .project-info h3 {

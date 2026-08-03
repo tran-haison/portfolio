@@ -55,6 +55,30 @@ test("homepage contains the approved content sections", async () => {
   assert.match(homepage, /<h1/);
 });
 
+test("homepage presents the approved technology stack in order", async () => {
+  // Arrange
+  const homepage = await source("src/app/page.tsx");
+
+  // Assert
+  const technologies = [
+    "Android",
+    "iOS",
+    "Flutter",
+    "React",
+    "Next.js",
+    "Node.js",
+    "Python",
+    "AWS",
+  ];
+
+  let previousPosition = -1;
+  for (const technology of technologies) {
+    const position = homepage.indexOf(`"${technology}"`);
+    assert.ok(position > previousPosition);
+    previousPosition = position;
+  }
+});
+
 test("portfolio presents Nosiah Studios in a brand-first voice", async () => {
   // Arrange
   const [homepage, header, footer, layout] = await Promise.all([
@@ -104,6 +128,25 @@ test("hero uses an optimized decorative neural-brain asset", async () => {
   assert.match(heroSource, /alt=""/);
   assert.match(heroSource, /brain-float/);
   assert.match(heroSource, /brain-pulse/);
+});
+
+test("studio section uses the shared eyebrow style and an optimized heart asset", async () => {
+  // Arrange
+  const [homepage, css] = await Promise.all([
+    source("src/app/page.tsx"),
+    source("src/app/globals.css"),
+  ]);
+
+  // Assert
+  assert.match(homepage, /Studio \/ Practice \/ 04/);
+  assert.match(homepage, /studio-heart\.webp/);
+  assert.match(homepage, /className="about-heart-image"/);
+  assert.match(css, /\.about-copy \.eyebrow\s*\{[\s\S]*?font-size:\s*0\.68rem[\s\S]*?line-height:\s*1\.5/);
+  assert.match(css, /\.about-heart-image\s*\{[\s\S]*?animation:\s*studio-heartbeat 2\.6s/);
+  assert.match(css, /@keyframes studio-heartbeat/);
+  assert.match(css, /\.about-marker span:nth-of-type\(1\)/);
+  assert.match(css, /\.about-marker span:nth-of-type\(2\)/);
+  assert.doesNotMatch(css, /\.about-marker::(?:before|after)/);
 });
 
 test("work detail route is static and rejects unknown slugs", async () => {
@@ -179,13 +222,28 @@ test("Resumie detail visual shows a sample job transformed into two documents", 
 
 test("shared project cards render optimized project logos instead of initials", async () => {
   // Arrange
-  const projectCard = await source("src/components/project-card.tsx");
+  const [homepage, projectCard, css] = await Promise.all([
+    source("src/app/page.tsx"),
+    source("src/components/project-card.tsx"),
+    source("src/app/globals.css"),
+  ]);
 
   // Assert
   assert.match(projectCard, /import Image from "next\/image"/);
   assert.match(projectCard, /src=\{project\.logo\}/);
   assert.match(projectCard, /className="project-logo"/);
   assert.doesNotMatch(projectCard, /project\.title\.slice/);
+  assert.match(projectCard, /project-card-reversed/);
+  assert.match(homepage, /reverse=\{index % 2 === 1\}/);
+  assert.match(css, /grid-template-columns:\s*minmax\(280px, 0\.83fr\) minmax\(0, 1\.17fr\)/);
+  assert.match(css, /\.project-info\s*\{[\s\S]*?min-width:\s*0/);
+  assert.match(projectCard, /className="project-title-row"/);
+  assert.match(projectCard, /className="project-year"/);
+  assert.match(projectCard, /className="project-description-row"/);
+  assert.doesNotMatch(projectCard, /project-meta/);
+  assert.match(css, /\.project-title-row,[\s\S]*?\.project-description-row\s*\{[\s\S]*?grid-template-columns:\s*minmax\(0, 1fr\) auto/);
+  assert.match(css, /\.project-card-reversed \.project-visual\s*\{[\s\S]*?order:\s*2/);
+  assert.match(css, /\.project-card-reversed \.project-info\s*\{[\s\S]*?order:\s*1/);
 });
 
 test("global styles include focus and reduced-motion safeguards", async () => {

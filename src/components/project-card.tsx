@@ -6,14 +6,23 @@ import { projects } from "@/data/projects.mjs";
 
 type Project = (typeof projects)[number];
 
-export function ProjectCard({ project, index }: { project: Project; index: number }) {
+type ProjectCardProps = {
+  project: Project;
+  index: number;
+  reverse?: boolean;
+};
+
+export function ProjectCard({ project, index, reverse = false }: ProjectCardProps) {
   const projectStyle = {
     "--project-accent": project.accent,
     "--project-accent-soft": project.accentSoft,
   } as CSSProperties;
 
   return (
-    <article className="project-card" style={projectStyle}>
+    <article
+      className={`project-card${reverse ? " project-card-reversed" : ""}`}
+      style={projectStyle}
+    >
       <Link href={`/work/${project.slug}`} aria-label={`View ${project.title} case study`}>
         <div className="project-visual" aria-hidden="true">
           <div className="project-visual-grid" />
@@ -37,13 +46,15 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
           <span className="project-status">{project.status}</span>
         </div>
         <div className="project-info">
-          <div>
-            <p>{project.discipline}</p>
-            <h3>{project.title}</h3>
+          <div className="project-info-heading">
+            <p className="project-discipline">{project.discipline}</p>
+            <div className="project-title-row">
+              <h3>{project.title}</h3>
+              <span className="project-year">{project.year}</span>
+            </div>
           </div>
-          <p className="project-summary">{project.summary}</p>
-          <div className="project-meta">
-            <span>{project.year}</span>
+          <div className="project-description-row">
+            <p className="project-summary">{project.summary}</p>
             <span className="project-arrow" aria-hidden="true">↗</span>
           </div>
         </div>
